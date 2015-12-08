@@ -334,18 +334,18 @@ def set_cells(grid, corner1, corner2, &prc)
 end
 
 def turn_on(grid, *corners)
-  set_cells(grid, *corners) { |cell| true }
+  set_cells(grid, *corners) { |cell| cell + 1 }
 end
 
 def turn_off(grid, *corners)
-  set_cells(grid, *corners) { |cell| false }
+  set_cells(grid, *corners) { |cell| [cell - 1, 0].max }
 end
 
 def toggle(grid, *corners)
-  set_cells(grid, *corners) { |cell| !cell }
+  set_cells(grid, *corners) { |cell| cell + 2 }
 end
 
-grid = Array.new(1000) { Array.new(1000) { false } }
+grid = Array.new(1000) { Array.new(1000) { 0 } }
 
 instructions = input.split("\n").map(&:chomp)
 
@@ -366,5 +366,6 @@ instructions.each do |instruction|
   end
 end
 
-lights_on = grid.flatten.count { |cell| cell == true }
-puts "count: #{lights_on}"
+# lights_on = grid.flatten.count { |cell| cell == true }
+total_brightness = grid.flatten.reduce { |sum, curr| sum + curr }
+puts "count: #{total_brightness}"
