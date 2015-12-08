@@ -1,6 +1,3 @@
-require 'yaml'
-require('uri')
-
 def unescape_count(str)
   str
     .gsub("\\\\", ' ')
