@@ -299,17 +299,6 @@ turn on 550,460 through 964,782
 turn on 31,760 through 655,892
 toggle 628,958 through 811,992"
 
-# input = "turn on 4,2 through 3,6
-# toggle 1,3 through 6,5
-# turn os 0,0 through 9,9"
-# "
-# turn off 241,118 through 530,832
-# turn off 41,447 through 932,737
-# turn off 820,663 through 832,982
-# turn on 550,460 through 964,782
-# turn on 31,760 through 655,892
-# toggle 628,958 through 811,992"
-
 def render(grid)
   grid.transpose.map do |col|
     col.map do |cell|
