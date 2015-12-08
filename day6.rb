@@ -366,6 +366,5 @@ instructions.each do |instruction|
   end
 end
 
-# lights_on = grid.flatten.count { |cell| cell == true }
 total_brightness = grid.flatten.reduce { |sum, curr| sum + curr }
-puts "count: #{total_brightness}"
+puts "total_brightness: #{total_brightness}"
