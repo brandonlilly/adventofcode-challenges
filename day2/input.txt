@@ -1,4 +1,4 @@
-input = "3x11x24
+3x11x24
 13x5x19
 1x9x27
 24x8x21
@@ -997,28 +997,4 @@ input = "3x11x24
 29x11x20
 3x12x15
 24x25x17
-14x6x11"
-
-boxes = input.split("\n").map do |dim|
-  dim.split("x").map(&:to_i)
-end
-
-def box_wrapping_paper(w, l, h)
-  sides = [l * w, w * h, h * l]
-  sa = sides.reduce(0) {|total, area| total + area * 2}
-  sa + sides.min
-end
-
-def ribbon_length(w, l, h)
-  perimeters = [
-    (w + h) * 2,
-    (h + l) * 2,
-    (w + l) * 2
-  ]
-  bow = w * l * h
-  perimeters.min + bow
-end
-
-total = boxes.reduce(0) do |acc, box|
-  acc + ribbon_length(*box)
-end
+14x6x11
