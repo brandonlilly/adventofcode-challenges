@@ -27,7 +27,7 @@ Snowdin to Tambi = 15
 Snowdin to Straylight = 99
 Tambi to Straylight = 70"
 
-cities = Hash.new {|hsh, key| hsh[key] = Hash.new }
+cities = Hash.new { |hsh, key| hsh[key] = Hash.new }
 input.split("\n").each do |line|
   city_a, city_b, dist = line.scan(/(\w+) to (\w+) = (\d+)/).first
   dist = dist.to_i
